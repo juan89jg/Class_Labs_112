@@ -3,16 +3,23 @@ public class RandomNumber
 	int computerNumber;
 	int LowNumber;
 	int HighNumber;
-	public int RandomNumber(int high)
+	public RandomNumber(int high)
 	{
 		HighNumber = high;
-		return HighNumber;
 	}
-	public int RandNumber(int low, int high)
+	public int RandomNumber(int low, int high)
 	{
 		HighNumber = high;
 		LowNumber = low;
 		return HighNumber;
+	}
+	public int getHighNumber()
+	{
+		return HighNumber;
+	}
+	public int getLowNumber()
+	{
+		return LowNumber;
 	}
 	public int GetANumber()
 	{
