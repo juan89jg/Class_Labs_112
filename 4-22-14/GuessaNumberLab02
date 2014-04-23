@@ -1,0 +1,85 @@
+import java.util.Scanner;// imports the scanner class
+
+public class GuessANumber
+{
+	public static void main( String[]args)
+	{
+		//Create the Scanner to input the number
+		Scanner input = new Scanner(System.in);
+		
+		//instantiate random number
+		RandomNumber GuessedNumber = new RandomNumber();
+		 		
+		//Declaring the variables
+		int UserNumber;
+		int computerNumber;
+		int lownumber;
+		int highnumber;
+		boolean KeepGoing = true;
+		boolean SameValues = true;
+		String YesNO;
+		
+		while(KeepGoing)
+		{
+				
+			System.out.println("Welcome to the Guessing game\nPlease enter a low digit:");
+			lownumber = input.nextInt();
+			GuessedNumber.setLowNumber(lownumber);
+			System.out.println("Please enter a high digit:");
+			highnumber = input.nextInt();
+			GuessedNumber.setHighNumber(highnumber);
+						while(SameValues)
+						{
+						computerNumber = GuessedNumber.GetANumber();	
+						
+						System.out.printf("\nPlease Enter a Number between %d and %d As your guess:",lownumber,highnumber);
+						UserNumber = input.nextInt();
+						
+						if (computerNumber == UserNumber)
+						{
+							System.out.println("You Guessed the right number");
+							System.out.printf("Your number %d, Random number %d" , UserNumber, computerNumber);
+						}
+						
+						else
+							{
+								if (computerNumber < UserNumber)
+								{
+									System.out.println("You Guessed to High");
+									System.out.printf("Your number %d, Random number %d" , UserNumber, computerNumber);
+								}
+								else
+								{	System.out.println("You Guessed to Low");
+								System.out.printf("Your number %d, Random number %d" , UserNumber, computerNumber);					
+								}//end else	
+							}//end else
+						System.out.printf("\n\nWould you like to continue guessing between %d and %d?\nType yes or no",lownumber, highnumber);
+						YesNO = input.next();
+						if (YesNO.toUpperCase().startsWith("Y"))
+						{
+							SameValues = true;
+						}
+						else
+						{
+							SameValues = false;
+						}
+						}//end loop same value
+		
+		System.out.println("\nWould you like to continue?\nPress Y for yess N for no");
+		YesNO = input.next();
+		
+		if (YesNO.toUpperCase().startsWith("Y"))
+		{
+			KeepGoing = true;
+			SameValues = true;
+		}
+		else
+		{
+			KeepGoing = false;
+		}
+			
+			
+		}//end loop
+	}//End main
+
+}//End class
