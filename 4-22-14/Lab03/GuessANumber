@@ -8,8 +8,9 @@ public class GuessANumber
 		Scanner input = new Scanner(System.in);
 		
 		//instantiate random number
-		RandomNumber GuessedNumber = new RandomNumber();
-		 		
+		
+	
+		
 		//Declaring the variables
 		int UserNumber;
 		int computerNumber;
@@ -27,12 +28,14 @@ public class GuessANumber
 			//GuessedNumber.setLowNumber(lownumber);
 			//System.out.println("Please enter a high digit:");
 			highnumber = input.nextInt();
-			GuessedNumber.RandomNumber(highnumber);
+			RandomNumber GuessedNumber = new RandomNumber(highnumber);
+			//GuessedNumber.setHighNumber(highnumber);
 						while(SameValues)
 						{
+						
 						computerNumber = GuessedNumber.GetANumber();	
 						
-						System.out.printf("\nPlease Enter a Number between 0 and %d As your guess:",highnumber);
+						System.out.printf("\nPlease Enter a Number between 0 and %d As your guess:", highnumber);
 						UserNumber = input.nextInt();
 						
 						if (computerNumber == UserNumber)
@@ -53,7 +56,7 @@ public class GuessANumber
 								System.out.printf("Your number %d, Random number %d" , UserNumber, computerNumber);					
 								}//end else	
 							}//end else
-						System.out.printf("\n\nWould you like to continue guessing between 0 and %d?\nType yes or no", highnumber);
+						System.out.printf("\n\nWould you like to continue guessing between 0 and %d?\nType yes or no", GuessedNumber.getHighNumber());
 						YesNO = input.next();
 						if (YesNO.toUpperCase().startsWith("Y"))
 						{
