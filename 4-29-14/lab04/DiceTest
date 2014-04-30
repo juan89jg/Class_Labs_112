@@ -1,0 +1,24 @@
+import java.util.Scanner;
+
+public class DiceTest 
+{
+	public static void main( String[]args)	
+	{
+	Scanner input = new Scanner(System.in);
+	
+	String userAnswer;
+	int computerNumber;
+	boolean keepGoing = true;
+		while(keepGoing)
+		{
+		computerNumber = Dice.oneThrow();
+		System.out.printf("The number generated after one roll is: %d\n\n", computerNumber);
+		System.out.println("Would you like to keep going?:");
+		userAnswer = input.next();
+		if (userAnswer.toUpperCase().startsWith("N"))
+		{
+			keepGoing = false;
+		}
+		}
+	}
+}
