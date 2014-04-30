@@ -1,0 +1,31 @@
+import java.util.Scanner;
+
+public class DiceTest 
+{
+	public static void main( String[]args)	
+	{
+	Scanner input = new Scanner(System.in);
+	
+	String userAnswer;
+	int computerNumber;
+	int dices;
+	int bounces;
+	boolean keepGoing = true;
+		while(keepGoing)
+		{
+		System.out.println("How many dices would you like to use?:");
+		dices = input.nextInt();
+		System.out.println("How many bounces would you like each dice to do?:");
+		bounces = input.nextInt();
+		Dice myDice = new Dice();
+		myDice.Throw(dices, bounces);
+		System.out.printf("The computer rolled: %d\n" ,myDice.Value());
+		System.out.println("Would you like to continue?");
+		userAnswer = input.next();
+		if (userAnswer.toUpperCase().startsWith("N"))
+		{
+			keepGoing = false;
+		}
+		}
+	}
+}
