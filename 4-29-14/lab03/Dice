@@ -1,0 +1,44 @@
+
+public class Dice 
+{
+	int computerNumber;
+	int sumofNumbers;
+	int generatedNumber;
+	int numberofbounces;
+	int averageNumber;
+	int i=1;
+		public Dice(int bounces)
+		{
+			while(i <= bounces)
+			{
+				sumofNumbers += Throw();
+				i++;
+			}
+			computerNumber = sumofNumbers / bounces;		
+		}
+		public int Throw()
+		{
+				computerNumber = (1	 + (int)(Math.random() * 6));
+				//System.out.printf("The number that the computer generated was %d\n", computerNumber);
+				return computerNumber;
+		}
+		public int Throw(int bounces)
+		{
+			
+			numberofbounces = bounces;
+			while(i <= bounces)
+			{
+				generatedNumber = (1+(int)(Math.random() *6));
+				System.out.printf("The generated number is: %d\n", generatedNumber);
+				sumofNumbers += generatedNumber;
+				System.out.printf("The Sum of the Number: %d\n\n", sumofNumbers);
+				i++;
+			}
+			computerNumber = sumofNumbers / numberofbounces;
+			return computerNumber;
+		}
+		public int Value()
+		{
+			return computerNumber;
+		}
+}
