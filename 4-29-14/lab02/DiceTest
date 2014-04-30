@@ -1,0 +1,31 @@
+import java.util.Scanner;
+
+public class DiceTest 
+{
+	public static void main( String[]args)	
+	{
+	Scanner input = new Scanner(System.in);
+	
+	int computerNumber;
+	int numberofRolls;
+	String userAnswer;
+	boolean keepGoing = true;
+		while(keepGoing)
+		{
+		Dice myDice = new Dice();
+		
+		System.out.println("Please input the number of rolls you would like to play: ");
+		numberofRolls = input.nextInt();
+		
+		myDice.Throw(numberofRolls);
+		computerNumber = myDice.Value();
+		System.out.printf("The Number that was rolled from the dice was : %d\n", computerNumber);
+		System.out.println("Would you like to keep going?(Type in yes or no): ");
+		userAnswer= input.next();
+			if(userAnswer.toUpperCase().startsWith("N"))
+			{
+				keepGoing = false;
+			}
+		}
+	}
+}
