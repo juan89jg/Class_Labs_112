@@ -1,0 +1,58 @@
+import java.util.Scanner;
+
+public class DiceTest 
+{
+	public static void main( String[]args)	
+	{
+	Scanner input = new Scanner(System.in);
+	
+	String userAnswer;
+	int userOption;
+	int userGuess;
+	int Guesses=0;
+	int numWins=0;
+	int numLoses=0;
+	int computerNumber;
+	int dices;
+	int bounces;
+	boolean keepGoing = true;
+		while(keepGoing)
+		{
+			System.out.println("Welcome to the Dice Game");
+			System.out.println("Please choose an option 1-3");
+			System.out.print("1- Roll Single Dice\n 2- Roll multiple Dice\n 3- See Results");
+			userOption = input.nextInt();
+			if(userOption == 1)
+			{
+				computerNumber = Dice.oneThrow();
+				System.out.println("Please Guess The number between 1 and 6 that the computer will roll");
+				userGuess = input.nextInt();
+					if(userGuess==computerNumber)
+					{
+						System.out.printf("Congrats you guessed right\nThe computer number was %d and you guessed %d",computerNumber, userGuess);
+						Guesses++;
+						numWins ++;
+					}
+						
+				
+			}
+			
+			
+			
+			
+		System.out.println("How many dices would you like to use?:");
+		dices = input.nextInt();
+		System.out.println("How many bounces would you like each dice to do?:");
+		bounces = input.nextInt();
+		Dice myDice = new Dice();
+		myDice.Throw(dices, bounces);
+		System.out.printf("The computer rolled: %d\n" ,myDice.Value());
+		System.out.println("Would you like to continue?");
+		userAnswer = input.next();
+		if (userAnswer.toUpperCase().startsWith("N"))
+		{
+			keepGoing = false;
+		}
+		}
+	}
+}
