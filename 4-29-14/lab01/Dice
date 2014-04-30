@@ -1,0 +1,15 @@
+public class Dice 
+{
+	int computerNumber;
+		
+		public int Throw()
+		{
+				computerNumber = (1	 + (int)(Math.random() * 6));
+				System.out.printf("The number that the computer generated was %d\n", computerNumber);
+				return computerNumber;
+		}
+		public void Value()
+		{
+			System.out.printf("The Number that was rolled from the dice was : %d\n", computerNumber);
+		}
+}
