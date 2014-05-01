@@ -1,4 +1,3 @@
-
 public class Dice 
 {
 	static int computerNumber;
@@ -41,9 +40,9 @@ public class Dice
 			while(i <= bounces)
 			{
 				generatedNumber = (1+(int)(Math.random() *6));
-				System.out.printf("   The generated number is: %d\n", generatedNumber);
+				//System.out.printf("   The generated number is: %d\n", generatedNumber);
 				sumofNumbers += generatedNumber;
-				System.out.printf("   The Sum of the Number: %d\n", sumofNumbers);
+				//System.out.printf("   The Sum of the Number: %d\n", sumofNumbers);
 				i++;
 			}
 			computerNumber = sumofNumbers / numberofbounces;
@@ -51,17 +50,18 @@ public class Dice
 		}
 		public int Throw(int dices, int bounces)
 		{
-			int totalNumber=0;
+			int compNumber=0;
+			int totalNumber = 0;
 			int t;
 			for(int x= 0; x<dices; x++)
 			{
-				System.out.printf("Throwing dice number %d\n ", x+1);
-				t = Throw(bounces);
-				totalNumber = totalNumber + t;
-				System.out.printf(" The number generated for Dice %d is %d\n", x+1, totalNumber);
-				computerNumber += totalNumber;
+				//System.out.printf("Throwing dice number %d\n ", x+1);
+				totalNumber += Throw(bounces);
+				//System.out.printf(" The number generated for Dice %d is %d\n", x+1, totalNumber);
+				compNumber += totalNumber;
+				totalNumber = 0;
 			}
-			return computerNumber;
+			return compNumber;
 		}
 		public int Value()
 		{
