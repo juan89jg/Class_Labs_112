@@ -68,3 +68,6 @@ public class Dice
 			return computerNumber;
 		}
 }
+
+//	int i=1; --> This is better off a local variable in each method
+ 
