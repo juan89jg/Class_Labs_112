@@ -1,0 +1,31 @@
+
+public class ThreeDice
+{
+	int compNumber;
+	Dice D1;
+	Dice D2;
+	Dice D3;
+	
+	public ThreeDice(int value)
+	{
+		D1 = new Dice(value);
+		D2 = new Dice(value);
+		D3 = new Dice(value);
+	}
+	public int totalValue()
+	{
+		return (D1.Value()+D2.Value()+D3.Value())/3;
+	}
+	public int D1value()
+	{
+		return D1.Value();
+	}
+	public int D2value()
+	{
+		return D2.Value();
+	}
+	public int D3value()
+	{
+		return D3.Value();
+	}
+}
