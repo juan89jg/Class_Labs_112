@@ -1,0 +1,11 @@
+
+public class ThreeDiceTester {
+
+	public static void main(String[] args) 
+	{
+		ThreeDice threeDice = new ThreeDice(3);
+		System.out.printf("The D1 rolled %d D2 rolled %d D3 rolled %d", threeDice.D1value(), threeDice.D2value(),threeDice.D3value());
+		System.out.printf("\nThe Average of 3 dice rolled 3 times was %d" , threeDice.totalValue());
+	}
+
+}
