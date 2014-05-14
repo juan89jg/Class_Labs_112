@@ -1,0 +1,22 @@
+
+public class TripleDice extends Dice
+{
+	
+	public TrippleDice(int DiceValue)
+	{
+		super(DiceValue);
+		
+	}
+	public void DisplayResults()
+	{
+		System.out.printf("You rolled %d Dice and the average number was %d", numberofDice, computerNumber );
+	}
+	@Override public String toString()
+	{
+		return String.format("%s\n%s: %d\n%s: %d\n%s %d",
+				"This toString overrides from the TripleDice class",
+				"Number of Dice",numberofDice,
+				"Number of bounces", numberofbounces,
+				"current value", computerNumber );
+	}
+}
