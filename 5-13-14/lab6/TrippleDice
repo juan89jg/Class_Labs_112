@@ -1,0 +1,14 @@
+
+public class TrippleDice extends Dice
+{
+	
+	public TrippleDice(int DiceValue)
+	{
+		super(DiceValue);
+		
+	}
+	public void DisplayResults()
+	{
+		System.out.printf("You rolled %d Dice and the average number was %d", numberofDice, computerNumber );
+	}
+}
