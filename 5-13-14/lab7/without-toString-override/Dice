@@ -88,10 +88,6 @@ public class Dice
 		{
 			return compNumber;
 		}
-		public String toString()
-		{
-			return String.format("%s\n%s: %d\n%s: %d\n%s: %d","This toString comes from the Dice class", "The number of Dice is", numberofDice,"TheNumber of bounces is", numberofbounces, "The Average number was", computerNumber);
-		}
 }
 
 //	int i=1; --> This is better off a local variable in each method
