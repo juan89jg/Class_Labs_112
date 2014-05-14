@@ -1,0 +1,104 @@
+public class Dice 
+{
+	static int computerNumber = 0;
+	int sumofNumbers;
+	int generatedNumber;
+	int numberofbounces;
+	int averageNumber;
+	int compNumber;
+	int numberofDice;
+
+		/*public Dice()
+		{
+			
+			
+		}*/
+		static int oneThrow()
+		{
+			int compNumber;
+			compNumber = (1	 + (int)(Math.random() * 6));
+			computerNumber = compNumber;
+			//System.out.printf("generated number: %d\n", compNumber);
+			return computerNumber;
+		}
+		public Dice(int dice)
+		{
+			numberofDice = dice;
+			numberofbounces = 1;
+			/*int i = 1;
+			while(i <= dice)
+			{
+				sumofNumbers += Throw();
+				i++;
+				System.out.printf("The sum of numbers is %d", sumofNumbers);
+			}
+			System.out.println();
+			compNumber = sumofNumbers / dice;*/		
+		}
+		/*public int Throw()
+		{
+				computerNumber = (1	 + (int)(Math.random() * 6));
+				System.out.printf("The number that the computer generated was %d\n", computerNumber);
+				return computerNumber;
+		}*/
+		public int Throw()
+		{
+			sumofNumbers = 0;
+			int i = 1;
+			while(i <= numberofDice)
+			{	
+				generatedNumber = (1+(int)(Math.random() *6));
+				System.out.printf("   The generated number is: %d\n", generatedNumber);
+				sumofNumbers += generatedNumber;
+				System.out.printf("   The Sum of the Number: %d\n", sumofNumbers);
+				i++;
+			}
+		return	computerNumber = sumofNumbers / numberofDice;
+		}
+		public int Throw(int bounces)
+		{
+			int i = 1;
+			numberofbounces = bounces;
+			while(i <= bounces)
+			{
+				generatedNumber = (1+(int)(Math.random() *6));
+				//System.out.printf("   The generated number is: %d\n", generatedNumber);
+				sumofNumbers += generatedNumber;
+				//System.out.printf("   The Sum of the Number: %d\n", sumofNumbers);
+				i++;
+			}
+			computerNumber = sumofNumbers / numberofbounces;
+			return computerNumber;
+		}
+		public int Throw(int dices, int bounces)
+		{
+			int compNumber=0;
+			int totalNumber = 0;
+			int t;
+			for(int x= 0; x<dices; x++)
+			{
+				//System.out.printf("Throwing dice number %d\n ", x+1);
+				totalNumber += Throw(bounces);
+				//System.out.printf(" The number generated for Dice %d is %d\n", x+1, totalNumber);
+				compNumber += totalNumber;
+				totalNumber = 0;
+			}
+			return compNumber;
+		}
+		public int Value()
+		{
+			return compNumber;
+		}
+		@Override public String toString()
+		{
+			return String.format("%s\n%s: %d\n%s: %d\n%s %d",
+					"This toString overrides from the Dice class",
+					"Number of Dice",numberofDice,
+					"Number of bounces", numberofbounces,
+					"current value", computerNumber );
+		}
+}
+
+//	int i=1; --> This is better off a local variable in each method
+ 
+
