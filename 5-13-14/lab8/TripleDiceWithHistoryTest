@@ -1,0 +1,21 @@
+import java.util.Scanner;
+
+public class TrippleDiceTest {
+
+	public static void main(String[] args) 
+	{
+		int dice;
+		int uservalue;
+		int numThrows;
+		
+		Scanner input = new Scanner(System.in);
+		System.out.println("Welcome to the Dice Game:");
+		System.out.println("Please enter number of Dice:");
+		dice = input.nextInt();
+		System.out.println("Please enter number of throws");
+		numThrows = input.nextInt();
+		TripleDicewithHistory myDice = new TripleDicewithHistory(dice,numThrows);
+		myDice.TrackHistory();
+		System.out.println(myDice);
+	}
+}
