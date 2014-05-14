@@ -1,0 +1,30 @@
+
+public class TripleDicewithHistory extends TrippleDice
+{
+	int[] ThrowArray = new int[100];
+	int numberThrows;
+	String s= "";
+	public TripleDicewithHistory(int DiceValue, int numThrows)
+	{
+		super(DiceValue);
+		numberThrows = numThrows;
+		
+	}
+	
+	public void TrackHistory()
+	{
+		for(int i = 0; i< numberThrows; i++)
+		{
+			ThrowArray[i] = Throw();
+		}
+	}
+	@Override public String toString()
+	{
+		String s = "Throw History";
+		for(int i = 0; i< numberThrows; i++)
+		{
+			s = s + " " +(i +1) + "="+ThrowArray[i];
+		}
+		return s;
+	}
+}
