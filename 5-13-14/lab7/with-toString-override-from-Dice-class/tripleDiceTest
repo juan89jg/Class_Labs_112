@@ -13,6 +13,6 @@ public class TrippleDiceTest {
 		dice = input.nextInt();
 		TrippleDice myDice = new TrippleDice(dice);
 		myDice.Throw();
-		System.out.println(myDice.toString());
+		System.out.println(myDice);
 	}
 }
