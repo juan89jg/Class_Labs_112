@@ -8,11 +8,11 @@ public class Dice
 	int compNumber;
 	int numberofDice;
 
-		public Dice()
+		/*public Dice()
 		{
 			
 			
-		}
+		}*/
 		static int oneThrow()
 		{
 			int compNumber;
@@ -24,6 +24,7 @@ public class Dice
 		public Dice(int dice)
 		{
 			numberofDice = dice;
+			numberofbounces = 1;
 			/*int i = 1;
 			while(i <= dice)
 			{
@@ -89,7 +90,7 @@ public class Dice
 		}
 		public String toString()
 		{
-			return String.format("%s: %d %s: %d", "The number of Dice is", numberofDice, "The Average number was", computerNumber);
+			return String.format("%s\n%s: %d\n%s: %d\n%s: %d","This toString comes from the Dice class", "The number of Dice is", numberofDice,"TheNumber of bounces is", numberofbounces, "The Average number was", computerNumber);
 		}
 }
 
