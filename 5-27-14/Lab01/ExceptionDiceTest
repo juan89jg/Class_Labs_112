@@ -1,0 +1,50 @@
+import java.util.Scanner;
+
+public class ExceptionDiceTest 
+{
+	public static void main(String [] args)
+	{
+		
+	Boolean KeepGoing = true;
+	int NumberDice;
+	int NumberBounces;
+	int numberThrows;
+	String continueGame;
+	Scanner input = new Scanner(System.in);
+	
+		do
+		{
+			try
+			{
+				System.out.println("Welcome to the Dice Game\nPlease input number of Dice:");
+				NumberDice = input.nextInt();
+				System.out.println("Please input number of Bounces:");
+				NumberBounces = input.nextInt();
+				System.out.println("Please input number of Throws no more than 3");
+				numberThrows = input.nextInt();
+				
+				Dice myDice = new Dice(NumberBounces, NumberDice, numberThrows);
+				myDice.Throw(NumberDice, NumberBounces);
+				System.out.printf("You Rolled %d ", myDice.Value() );
+				
+				
+			}
+			catch(Exception ThrowException)
+			{
+			//System.err.printf("\nException: %s \n", ThrowException);
+			//input.nextLine();
+			System.out.println("You must Thow less than 3 times. Please try again");
+			}
+			finally
+			{
+				System.out.println("Would you like to continue? \nType yes to continue no to Stop\n");
+				continueGame = input.next();
+				if(continueGame.toUpperCase().startsWith("N"))
+				{
+					KeepGoing = false;
+				}
+				
+			}
+		}while(KeepGoing);
+	}
+}
