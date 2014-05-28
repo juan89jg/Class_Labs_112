@@ -1,0 +1,88 @@
+public class Dice 
+{
+	static int computerNumber;
+	int sumofNumbers;
+	int generatedNumber;
+	int numberofbounces;
+	int numberofDices;
+	int averageNumber;
+	int numberofThrows;
+	int i=1;
+		public Dice()
+		{
+			numberofbounces = 0;
+			numberofDices= 0;
+		}
+		public Dice(int numbounces, int numDices, int NumThrows)
+		{
+			numberofbounces = numbounces;
+			numberofDices = numDices;
+			numberofThrows = NumThrows;
+		}
+		static int oneThrow()
+		{
+			int compNumber;
+			computerNumber = (1	 + (int)(Math.random() * 6));
+			compNumber = computerNumber;
+			//System.out.printf("generated number: %d\n", compNumber);
+			return computerNumber;
+		}
+		/*public Dice(int bounces)
+		{
+			while(i <= bounces)
+			{
+				sumofNumbers += Throw();
+				i++;
+			}
+			computerNumber = sumofNumbers / bounces;		
+		}*/
+		public int Throw() 
+		{		
+			
+				computerNumber = (1	 + (int)(Math.random() * 6));
+				//System.out.printf("The number that the computer generated was %d\n", computerNumber);
+				return computerNumber;
+		}
+		public int Throw(int bounces)
+		{
+			
+			numberofbounces = bounces;
+			while(i <= bounces)
+			{
+				generatedNumber = (1+(int)(Math.random() *6));
+				//System.out.printf("   The generated number is: %d\n", generatedNumber);
+				sumofNumbers += generatedNumber;
+				//System.out.printf("   The Sum of the Number: %d\n", sumofNumbers);
+				i++;
+			}
+			computerNumber = sumofNumbers / numberofbounces;
+			return computerNumber;
+		}
+		public int Throw(int dices, int bounces) throws Exception
+		
+		{
+			if (numberofThrows > 3)
+				{
+				throw new Exception();
+				}
+			int compNumber=0;
+			int totalNumber = 0;
+			int t;
+			for(int x= 0; x<dices; x++)
+			{
+				//System.out.printf("Throwing dice number %d\n ", x+1);
+				totalNumber += Throw(bounces);
+				//System.out.printf(" The number generated for Dice %d is %d\n", x+1, totalNumber);
+				compNumber += totalNumber;
+				totalNumber = 0;
+			}
+			return compNumber;
+		}
+		public int Value()
+		{
+			return computerNumber;
+		}
+}
+
+//	int i=1; --> This is better off a local variable in each method
+ 
