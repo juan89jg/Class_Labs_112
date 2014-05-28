@@ -14,12 +14,12 @@ public class Dice implements Runnable
 	  public void run()
 	 {
 		 System.out.println();
-		 System.out.println(Thread.currentThread().getName());
+		 s = "THread Name = " + Thread.currentThread().getName();
 		 for(int i = 0; i < 25; i++)
 		 {
 			 s += " " +this.Throw();
 		 }
-		 System.out.print(s);
+		 System.out.println(s);
 	 }
 		public Dice()
 		{
