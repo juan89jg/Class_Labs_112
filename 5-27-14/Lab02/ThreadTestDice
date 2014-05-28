@@ -1,0 +1,23 @@
+
+public class ThreadTestDice 
+{
+	public static void main(String [] args)
+	{
+		
+		for (int i = 0; i < 4; i++)
+		{	
+		Runnable D1 = new Dice();
+		Thread Dice = new Thread(D1);
+		 Dice.setName("Dice 1 Number " + i);
+	      // Start the thread, never call method run() direct
+	     Dice.start();
+		
+		Runnable D2 = new Dice();
+		Thread Dice2 = new Thread(D2);
+		Dice2.setName("Dice 2 Number " + i);
+	      // Start the thread, never call method run() direct
+	     Dice2.start();
+		}
+	}
+
+}
