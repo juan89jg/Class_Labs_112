@@ -24,5 +24,4 @@ public class ThreadTestDice
 	     Dice2.start();
 		}
 	}
-
 }
