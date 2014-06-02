@@ -1,0 +1,28 @@
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
+
+
+public class ThreadTestDice 
+{
+	public static void main(String [] args)
+	{
+		
+		ExecutorService ThreadExecutor = Executors.newCachedThreadPool();
+		for (int i = 0; i < 6; i++)
+		{	
+		Runnable D1 = new Dice("Dice 1", i);
+		Thread Dice = new Thread(D1);
+		 Dice.setName("Dice 1 Number " + i);
+	      // Start the thread, never call method run() direct
+	     Dice.start();
+	     ThreadExecutor.execute(Dice);
+		
+		Runnable D2 = new Dice("Dice 2", i);
+		Thread Dice2 = new Thread(D2);
+		Dice2.setName("Dice 2 Number " + i);
+	      // Start the thread, never call method run() direct
+	     Dice2.start();
+		}
+	}
+
+}
